@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'any' }
+    agent any
 
     environment {
         GOOGLE_APPLICATION_CREDENTIALS = credentials('google')
