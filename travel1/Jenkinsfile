@@ -2,9 +2,9 @@ pipeline {
     agent { label 'travelbooking' }
 
     environment {
-        GOOGLE_APPLICATION_CREDENTIALS = credentials('gcp-service-account')
-        GOOGLE_CLOUD_PROJECT           = credentials('gcp-project-id')
-        GKE_CLUSTER                    = 'travelbooking-cluster'
+        GOOGLE_APPLICATION_CREDENTIALS = credentials('google')
+        GOOGLE_CLOUD_PROJECT           = credentials('project-b072ca81-0008-42cb-81c')
+        GKE_CLUSTER                    = 'travelbooking-gke'
         GKE_ZONE                       = 'us-central1-a'
         ARTIFACT_REGISTRY              = 'us-central1-docker.pkg.dev'
         DOCKER_REPO                    = "${ARTIFACT_REGISTRY}/${GOOGLE_CLOUD_PROJECT}/travel-booking"
@@ -22,7 +22,7 @@ pipeline {
         stage('Git Clone') {
             steps {
                 container('docker') {
-                    git branch: 'main', credentialsId: 'github-pat', url: 'https://github.com/vijaygiduthuri/travelbooking.git'
+                    git branch: 'main', credentialsId: 'github-pat', url: 'https://github.com/SATYA0110/travel1.git/'
                     sh 'echo "Repository cloned successfully"'
                     sh 'ls -la'
                 }
