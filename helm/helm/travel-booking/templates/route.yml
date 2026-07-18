@@ -7,8 +7,7 @@ spec:
   parentRefs:
   - name: travel-booking-gateway
     namespace: travel-booking
-  hostnames:
-  - "vijaygiduthuri.in"
+  
   rules:
   # Route API requests to the user-service container
   - matches:
