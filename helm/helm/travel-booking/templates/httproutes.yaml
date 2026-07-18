@@ -107,7 +107,7 @@ spec:
   - matches:
     - path:
         type: PathPrefix
-        value: /api/notifications
+        value: 
     backendRefs:
     - name: notification-service-service
       port: 3005
